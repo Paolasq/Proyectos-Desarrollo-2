@@ -1,0 +1,17 @@
+C:\Users\salda\Documents\INTEC\ing. Soft\Desarrollo 2\Formulario cedula\Formulario cedula\bin\Debug\net6.0-windows\Formulario cedula.exe
+C:\Users\salda\Documents\INTEC\ing. Soft\Desarrollo 2\Formulario cedula\Formulario cedula\bin\Debug\net6.0-windows\Formulario cedula.deps.json
+C:\Users\salda\Documents\INTEC\ing. Soft\Desarrollo 2\Formulario cedula\Formulario cedula\bin\Debug\net6.0-windows\Formulario cedula.runtimeconfig.json
+C:\Users\salda\Documents\INTEC\ing. Soft\Desarrollo 2\Formulario cedula\Formulario cedula\bin\Debug\net6.0-windows\Formulario cedula.dll
+C:\Users\salda\Documents\INTEC\ing. Soft\Desarrollo 2\Formulario cedula\Formulario cedula\bin\Debug\net6.0-windows\ref\Formulario cedula.dll
+C:\Users\salda\Documents\INTEC\ing. Soft\Desarrollo 2\Formulario cedula\Formulario cedula\bin\Debug\net6.0-windows\Formulario cedula.pdb
+C:\Users\salda\Documents\INTEC\ing. Soft\Desarrollo 2\Formulario cedula\Formulario cedula\obj\Debug\net6.0-windows\Formulario cedula.csproj.AssemblyReference.cache
+C:\Users\salda\Documents\INTEC\ing. Soft\Desarrollo 2\Formulario cedula\Formulario cedula\obj\Debug\net6.0-windows\Formulario cedula.csproj.GenerateResource.cache
+C:\Users\salda\Documents\INTEC\ing. Soft\Desarrollo 2\Formulario cedula\Formulario cedula\obj\Debug\net6.0-windows\Formulario cedula.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\salda\Documents\INTEC\ing. Soft\Desarrollo 2\Formulario cedula\Formulario cedula\obj\Debug\net6.0-windows\Formulario cedula.AssemblyInfoInputs.cache
+C:\Users\salda\Documents\INTEC\ing. Soft\Desarrollo 2\Formulario cedula\Formulario cedula\obj\Debug\net6.0-windows\Formulario cedula.AssemblyInfo.cs
+C:\Users\salda\Documents\INTEC\ing. Soft\Desarrollo 2\Formulario cedula\Formulario cedula\obj\Debug\net6.0-windows\Formulario cedula.csproj.CoreCompileInputs.cache
+C:\Users\salda\Documents\INTEC\ing. Soft\Desarrollo 2\Formulario cedula\Formulario cedula\obj\Debug\net6.0-windows\Formulario cedula.dll
+C:\Users\salda\Documents\INTEC\ing. Soft\Desarrollo 2\Formulario cedula\Formulario cedula\obj\Debug\net6.0-windows\ref\Formulario cedula.dll
+C:\Users\salda\Documents\INTEC\ing. Soft\Desarrollo 2\Formulario cedula\Formulario cedula\obj\Debug\net6.0-windows\Formulario cedula.pdb
+C:\Users\salda\Documents\INTEC\ing. Soft\Desarrollo 2\Formulario cedula\Formulario cedula\obj\Debug\net6.0-windows\Formulario cedula.genruntimeconfig.cache
+C:\Users\salda\Documents\INTEC\ing. Soft\Desarrollo 2\Formulario cedula\Formulario cedula\obj\Debug\net6.0-windows\Formulario_cedula.Forms1.resources
