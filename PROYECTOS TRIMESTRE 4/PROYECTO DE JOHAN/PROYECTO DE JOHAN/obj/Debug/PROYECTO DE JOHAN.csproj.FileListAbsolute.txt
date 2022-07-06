@@ -1,0 +1,11 @@
+C:\Users\salda\Documents\INTEC\ing. Soft\Desarrollo 2\PROYECTOS TRIMESTRE 4\PROYECTO DE JOHAN\PROYECTO DE JOHAN\bin\Debug\PROYECTO DE JOHAN.exe.config
+C:\Users\salda\Documents\INTEC\ing. Soft\Desarrollo 2\PROYECTOS TRIMESTRE 4\PROYECTO DE JOHAN\PROYECTO DE JOHAN\bin\Debug\PROYECTO DE JOHAN.exe
+C:\Users\salda\Documents\INTEC\ing. Soft\Desarrollo 2\PROYECTOS TRIMESTRE 4\PROYECTO DE JOHAN\PROYECTO DE JOHAN\bin\Debug\PROYECTO DE JOHAN.pdb
+C:\Users\salda\Documents\INTEC\ing. Soft\Desarrollo 2\PROYECTOS TRIMESTRE 4\PROYECTO DE JOHAN\PROYECTO DE JOHAN\obj\Debug\PROYECTO DE JOHAN.csproj.AssemblyReference.cache
+C:\Users\salda\Documents\INTEC\ing. Soft\Desarrollo 2\PROYECTOS TRIMESTRE 4\PROYECTO DE JOHAN\PROYECTO DE JOHAN\obj\Debug\PROYECTO DE JOHAN.csproj.SuggestedBindingRedirects.cache
+C:\Users\salda\Documents\INTEC\ing. Soft\Desarrollo 2\PROYECTOS TRIMESTRE 4\PROYECTO DE JOHAN\PROYECTO DE JOHAN\obj\Debug\PROYECTO_DE_JOHAN.Form1.resources
+C:\Users\salda\Documents\INTEC\ing. Soft\Desarrollo 2\PROYECTOS TRIMESTRE 4\PROYECTO DE JOHAN\PROYECTO DE JOHAN\obj\Debug\PROYECTO_DE_JOHAN.Properties.Resources.resources
+C:\Users\salda\Documents\INTEC\ing. Soft\Desarrollo 2\PROYECTOS TRIMESTRE 4\PROYECTO DE JOHAN\PROYECTO DE JOHAN\obj\Debug\PROYECTO DE JOHAN.csproj.GenerateResource.cache
+C:\Users\salda\Documents\INTEC\ing. Soft\Desarrollo 2\PROYECTOS TRIMESTRE 4\PROYECTO DE JOHAN\PROYECTO DE JOHAN\obj\Debug\PROYECTO DE JOHAN.csproj.CoreCompileInputs.cache
+C:\Users\salda\Documents\INTEC\ing. Soft\Desarrollo 2\PROYECTOS TRIMESTRE 4\PROYECTO DE JOHAN\PROYECTO DE JOHAN\obj\Debug\PROYECTO DE JOHAN.exe
+C:\Users\salda\Documents\INTEC\ing. Soft\Desarrollo 2\PROYECTOS TRIMESTRE 4\PROYECTO DE JOHAN\PROYECTO DE JOHAN\obj\Debug\PROYECTO DE JOHAN.pdb

@@ -1,0 +1,16 @@
+C:\Users\salda\Documents\INTEC\ing. Soft\Desarrollo 2\PROYECTOS TRIMESTRE 4\ControlDeGastos\ControlDeGastos\bin\Debug\ControlDeGastos.exe.config
+C:\Users\salda\Documents\INTEC\ing. Soft\Desarrollo 2\PROYECTOS TRIMESTRE 4\ControlDeGastos\ControlDeGastos\bin\Debug\ControlDeGastos.exe
+C:\Users\salda\Documents\INTEC\ing. Soft\Desarrollo 2\PROYECTOS TRIMESTRE 4\ControlDeGastos\ControlDeGastos\bin\Debug\ControlDeGastos.pdb
+C:\Users\salda\Documents\INTEC\ing. Soft\Desarrollo 2\PROYECTOS TRIMESTRE 4\ControlDeGastos\ControlDeGastos\obj\Debug\ControlDeGastos.csproj.AssemblyReference.cache
+C:\Users\salda\Documents\INTEC\ing. Soft\Desarrollo 2\PROYECTOS TRIMESTRE 4\ControlDeGastos\ControlDeGastos\obj\Debug\ControlDeGastos.csproj.SuggestedBindingRedirects.cache
+C:\Users\salda\Documents\INTEC\ing. Soft\Desarrollo 2\PROYECTOS TRIMESTRE 4\ControlDeGastos\ControlDeGastos\obj\Debug\ControlDeGastos.MisGastos.resources
+C:\Users\salda\Documents\INTEC\ing. Soft\Desarrollo 2\PROYECTOS TRIMESTRE 4\ControlDeGastos\ControlDeGastos\obj\Debug\ControlDeGastos.Properties.Resources.resources
+C:\Users\salda\Documents\INTEC\ing. Soft\Desarrollo 2\PROYECTOS TRIMESTRE 4\ControlDeGastos\ControlDeGastos\obj\Debug\ControlDeGastos.csproj.GenerateResource.cache
+C:\Users\salda\Documents\INTEC\ing. Soft\Desarrollo 2\PROYECTOS TRIMESTRE 4\ControlDeGastos\ControlDeGastos\obj\Debug\ControlDeGastos.csproj.CoreCompileInputs.cache
+C:\Users\salda\Documents\INTEC\ing. Soft\Desarrollo 2\PROYECTOS TRIMESTRE 4\ControlDeGastos\ControlDeGastos\obj\Debug\ControlDeGastos.exe
+C:\Users\salda\Documents\INTEC\ing. Soft\Desarrollo 2\PROYECTOS TRIMESTRE 4\ControlDeGastos\ControlDeGastos\obj\Debug\ControlDeGastos.pdb
+C:\Users\salda\Documents\INTEC\ing. Soft\Desarrollo 2\PROYECTOS TRIMESTRE 4\ControlDeGastos\ControlDeGastos\bin\Debug\Newtonsoft.Json.dll
+C:\Users\salda\Documents\INTEC\ing. Soft\Desarrollo 2\PROYECTOS TRIMESTRE 4\ControlDeGastos\ControlDeGastos\bin\Debug\Newtonsoft.Json.xml
+C:\Users\salda\Documents\INTEC\ing. Soft\Desarrollo 2\PROYECTOS TRIMESTRE 4\ControlDeGastos\ControlDeGastos\obj\Debug\ControlDeGastos.csproj.CopyComplete
+C:\Users\salda\Documents\INTEC\ing. Soft\Desarrollo 2\PROYECTOS TRIMESTRE 4\ControlDeGastos\ControlDeGastos\obj\Debug\ControlDeGastos.AgregarConcepto.resources
+C:\Users\salda\Documents\INTEC\ing. Soft\Desarrollo 2\PROYECTOS TRIMESTRE 4\ControlDeGastos\ControlDeGastos\obj\Debug\ControlDeGastos.AgregarPago.resources
