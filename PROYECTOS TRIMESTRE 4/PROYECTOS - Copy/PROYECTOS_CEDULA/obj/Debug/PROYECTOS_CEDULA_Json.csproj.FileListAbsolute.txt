@@ -1,0 +1,14 @@
+C:\Users\salda\Documents\INTEC\ing. Soft\Desarrollo 2\PROYECTOS TRIMESTRE 4\PROYECTOS - Copy\PROYECTOS_CEDULA\bin\Debug\PROYECTOS_CEDULA.exe.config
+C:\Users\salda\Documents\INTEC\ing. Soft\Desarrollo 2\PROYECTOS TRIMESTRE 4\PROYECTOS - Copy\PROYECTOS_CEDULA\bin\Debug\PROYECTOS_CEDULA.exe
+C:\Users\salda\Documents\INTEC\ing. Soft\Desarrollo 2\PROYECTOS TRIMESTRE 4\PROYECTOS - Copy\PROYECTOS_CEDULA\bin\Debug\PROYECTOS_CEDULA.pdb
+C:\Users\salda\Documents\INTEC\ing. Soft\Desarrollo 2\PROYECTOS TRIMESTRE 4\PROYECTOS - Copy\PROYECTOS_CEDULA\bin\Debug\Newtonsoft.Json.dll
+C:\Users\salda\Documents\INTEC\ing. Soft\Desarrollo 2\PROYECTOS TRIMESTRE 4\PROYECTOS - Copy\PROYECTOS_CEDULA\bin\Debug\Newtonsoft.Json.xml
+C:\Users\salda\Documents\INTEC\ing. Soft\Desarrollo 2\PROYECTOS TRIMESTRE 4\PROYECTOS - Copy\PROYECTOS_CEDULA\obj\Debug\PROYECTOS_CEDULA_Json.csproj.AssemblyReference.cache
+C:\Users\salda\Documents\INTEC\ing. Soft\Desarrollo 2\PROYECTOS TRIMESTRE 4\PROYECTOS - Copy\PROYECTOS_CEDULA\obj\Debug\PROYECTOS_CEDULA_Json.csproj.SuggestedBindingRedirects.cache
+C:\Users\salda\Documents\INTEC\ing. Soft\Desarrollo 2\PROYECTOS TRIMESTRE 4\PROYECTOS - Copy\PROYECTOS_CEDULA\obj\Debug\PROYECTOS_CEDULA.Form1.resources
+C:\Users\salda\Documents\INTEC\ing. Soft\Desarrollo 2\PROYECTOS TRIMESTRE 4\PROYECTOS - Copy\PROYECTOS_CEDULA\obj\Debug\PROYECTOS_CEDULA.Properties.Resources.resources
+C:\Users\salda\Documents\INTEC\ing. Soft\Desarrollo 2\PROYECTOS TRIMESTRE 4\PROYECTOS - Copy\PROYECTOS_CEDULA\obj\Debug\PROYECTOS_CEDULA_Json.csproj.GenerateResource.cache
+C:\Users\salda\Documents\INTEC\ing. Soft\Desarrollo 2\PROYECTOS TRIMESTRE 4\PROYECTOS - Copy\PROYECTOS_CEDULA\obj\Debug\PROYECTOS_CEDULA_Json.csproj.CoreCompileInputs.cache
+C:\Users\salda\Documents\INTEC\ing. Soft\Desarrollo 2\PROYECTOS TRIMESTRE 4\PROYECTOS - Copy\PROYECTOS_CEDULA\obj\Debug\PROYECTOS_CEDULA_Json.csproj.CopyComplete
+C:\Users\salda\Documents\INTEC\ing. Soft\Desarrollo 2\PROYECTOS TRIMESTRE 4\PROYECTOS - Copy\PROYECTOS_CEDULA\obj\Debug\PROYECTOS_CEDULA.exe
+C:\Users\salda\Documents\INTEC\ing. Soft\Desarrollo 2\PROYECTOS TRIMESTRE 4\PROYECTOS - Copy\PROYECTOS_CEDULA\obj\Debug\PROYECTOS_CEDULA.pdb

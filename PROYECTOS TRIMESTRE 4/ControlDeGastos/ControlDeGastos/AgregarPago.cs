@@ -24,12 +24,22 @@ namespace ControlDeGastos
             actualizarMetodos();
 
         }
-
-        private void GenerateNewID()
+        public int id()
         {
-            VaciarCampos();
-            //var Id = 1; // se indica que es un id numerico con valor inicial de 1
-            //txtboxID.Text = Id.ToString(); // se obtiene lo escrito en dicho textbox
+            var pathFile2 = $"{AppDomain.CurrentDomain.BaseDirectory}\\pagos.json";
+            var listaPagos = new List<Pago>();
+            var ID = 1;
+
+            if (File.Exists(pathFile2))
+            {
+                var json2 = File.ReadAllText(pathFile2);
+                listaPagos = JsonConvert.DeserializeObject < List<Pago> > (json2);
+            }
+            if(listaPagos.Count > 0)
+            {
+                ID = listaPagos.Max(x => x.Id + 1);
+            }
+            return ID;
         }
 
         private void VaciarCampos() // se crea funcion para elimiar todos los campos del formulario
@@ -79,7 +89,7 @@ namespace ControlDeGastos
                     pago.Metodo = txtboxMetodo.Text;
                     pago.ModifiedDate = DateTime.Now;
                     pago.Visibilidad = chkIsEnabled.Checked;
-
+                    pago.Id = Id;
                 }
             }
 
@@ -103,7 +113,6 @@ namespace ControlDeGastos
             obtenerMetodosPago(); //metodo para obtener todos los  registros que tenemos en el archivo
             actualizarMetodos();
         }
-
         private List<Pago> obtenerMetodosPago()
         {
             var pathFile = $"{AppDomain.CurrentDomain.BaseDirectory}\\pagos.json";
@@ -115,12 +124,10 @@ namespace ControlDeGastos
                 listaPagos = JsonConvert.DeserializeObject<List<Pago>>(json);
             }
 
-            txtboxID.Text = (listaPagos.Count + 1).ToString();
+            //txtboxID.Text = (listaPagos.Count + 1).ToString();
             //dgvMetodos.DataSource = listaPagos; // mi dgv sera igual a mi listado de Pagos
             return listaPagos;
         }
-
-
         private void bttNuevo_Click_1(object sender, EventArgs e)
         {
             gbAgregarMetodo.Enabled = true;
@@ -128,9 +135,7 @@ namespace ControlDeGastos
             bttnGuardar.Enabled = true;
             bttNuevo.Enabled = false;
             bttnEliminar.Enabled = false;
-
         }
-
         private void bttnCancelar_Click(object sender, EventArgs e)
         {
             VaciarCampos();
@@ -141,13 +146,13 @@ namespace ControlDeGastos
         {
             this.Close();
         }
-
         private void bttNuevo_Click(object sender, EventArgs e)
         {
             gbAgregarMetodo.Enabled = true;
             bttnCancelar.Enabled = true;
             bttnGuardar.Enabled = true;
             bttNuevo.Enabled = false;
+            Adding2 = true;
 
         }
 
@@ -167,8 +172,9 @@ namespace ControlDeGastos
             var pathFile = $"{AppDomain.CurrentDomain.BaseDirectory}\\pagos.json";
             var json = File.ReadAllText(pathFile, Encoding.UTF8);
             var listaPagos = JsonConvert.DeserializeObject<List<Pago>>(json);
-            DataGridViewRow fila = this.dgvMetodos.SelectedRows[0];
-            listaPagos.RemoveAt(fila.Index);
+            //DataGridViewRow fila = this.dgvMetodos.SelectedRows[0];
+            var Pago = listaPagos.FirstOrDefault(x => x.Id.ToString() == txtboxID.Text); // se crear una variable con la que se identifica la primera fila que coincida con el id buscado
+            listaPagos.Remove(Pago);
             json = JsonConvert.SerializeObject(listaPagos);
 
             var sw = new StreamWriter(pathFile, false, Encoding.UTF8);
@@ -183,12 +189,13 @@ namespace ControlDeGastos
         private void dgvMetodos_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             var rowIndex = e.RowIndex;
-            if(rowIndex > -1)
+            if(dgvMetodos.RowCount > 0) // procura que existan filas en el dgv
             {
                 List<Pago> listaPagos = obtenerMetodosPago();
+                gbAgregarMetodo.Enabled = true;
                 bttnEliminar.Enabled = true;
+                bttnGuardar.Enabled = true;
                 rellenarCampos(listaPagos[rowIndex]);
-
             }
         }
         private void rellenarCampos(Pago pago)

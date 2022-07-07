@@ -1,0 +1,8 @@
+C:\Users\salda\Documents\INTEC\ing. Soft\Desarrollo 2\PROYECTOS TRIMESTRE 4\PROYECTOS - Cedula json\PROYECTOS_CEDULA\obj\Debug\PROYECTOS_CEDULA_JSON.csproj.AssemblyReference.cache
+C:\Users\salda\Documents\INTEC\ing. Soft\Desarrollo 2\PROYECTOS TRIMESTRE 4\PROYECTOS - Cedula json\PROYECTOS_CEDULA\obj\Debug\PROYECTOS_CEDULA_JSON.csproj.SuggestedBindingRedirects.cache
+C:\Users\salda\Documents\INTEC\ing. Soft\Desarrollo 2\PROYECTOS TRIMESTRE 4\PROYECTOS - Cedula json\PROYECTOS_CEDULA\obj\Debug\PROYECTOS_CEDULA.Form1.resources
+C:\Users\salda\Documents\INTEC\ing. Soft\Desarrollo 2\PROYECTOS TRIMESTRE 4\PROYECTOS - Cedula json\PROYECTOS_CEDULA\obj\Debug\PROYECTOS_CEDULA.Properties.Resources.resources
+C:\Users\salda\Documents\INTEC\ing. Soft\Desarrollo 2\PROYECTOS TRIMESTRE 4\PROYECTOS - Cedula json\PROYECTOS_CEDULA\obj\Debug\PROYECTOS_CEDULA_JSON.csproj.GenerateResource.cache
+C:\Users\salda\Documents\INTEC\ing. Soft\Desarrollo 2\PROYECTOS TRIMESTRE 4\PROYECTOS - Cedula json\PROYECTOS_CEDULA\obj\Debug\PROYECTOS_CEDULA_JSON.csproj.CoreCompileInputs.cache
+C:\Users\salda\Documents\INTEC\ing. Soft\Desarrollo 2\PROYECTOS TRIMESTRE 4\PROYECTOS - Cedula json\PROYECTOS_CEDULA\obj\Debug\PROYECTOS_CEDULA.exe
+C:\Users\salda\Documents\INTEC\ing. Soft\Desarrollo 2\PROYECTOS TRIMESTRE 4\PROYECTOS - Cedula json\PROYECTOS_CEDULA\obj\Debug\PROYECTOS_CEDULA.pdb

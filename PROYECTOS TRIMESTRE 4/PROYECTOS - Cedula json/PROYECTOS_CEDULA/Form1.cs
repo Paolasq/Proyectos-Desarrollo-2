@@ -1,8 +1,10 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,7 +14,8 @@ namespace PROYECTOS_CEDULA
 {
     public partial class Form1 : Form
     {
-        List<Ciudadano> listaCiudadanos = new List<Ciudadano>(); //creacion de lista para almacener a los ciudadanos registrados 
+        public bool Adding { get; set; } = true;
+        //List<Ciudadano> listaCiudadanos = new List<Ciudadano>(); //creacion de lista para almacener a los ciudadanos registrados 
         public Form1()
         {
             InitializeComponent();
@@ -20,33 +23,58 @@ namespace PROYECTOS_CEDULA
         char Sexo = 'F';
         private void CrearCiudadano() //metodo donde se guardaran los datos de cada ciudadano que solo sera visible en la clase que se defina (void se utiliza si el metodo no retorna nada)
         {
+            var json = string.Empty; //se crear el json
+            var listaCiudadanos = new List<Ciudadano>(); //creo una lista de mi objeto conceptos creado anteriormennte (se crear un listado de todos los conceptos que yo tenga) 
+            var pathFile = $"{AppDomain.CurrentDomain.BaseDirectory}\\ciudadano.json"; //(path = ruta) para almacenar el archivo json 
 
-            var persona = new Ciudadano // var es utilizado cuando no queremos especificar el tipo de variable ya que en esta se encontraran varios tipos DE datos
+            if (File.Exists(pathFile)) //si existe el archivo en la ruta indicada
             {
-                Id = Guid.NewGuid(),
-                Nombre = txtBoxNombre.Text, //indicamos que la propiedad nombre debe de contener lo escrito en el combobox
-                Cedula = txtBoxCedula.Text,
-                Sexo = Sexo,
-                LugarNacimiento = txtboxLugarNaci.Text,
-                FechaNacimiento = dtpNacimiento.Value, // indicamos que la propiedad debe de contener la fecha seleccionada en el datetimepicker 
-                Nacionalidad = txtBoxNacionalidad.Text,
-                Sangre = cbSangre.Text, // indicamos que la propiedad sangre debe contener la opcion que se seleccione en el combobox
-                EstadoCivil = txtBoxEstadoCivil.Text,
-                FechaExpiracion = dtpExpiracion.Value, // indicamos que la propiedad debe de contener la fecha seleccionada en el datetimepicker 
-                Ocupacion = txtBoxOcupacion.Text,
-            };
+                json = File.ReadAllText(pathFile, Encoding.UTF8); //se buscara todo lo que esta en ese archivo y lo metera en esa variable
+                listaCiudadanos = JsonConvert.DeserializeObject<List<Ciudadano>>(json);
+            }
+            var ciudadano = new Ciudadano(); // se crea concepto que es igual a un objeto tipo concepto
+            if (Adding) //Adding Record en el caso de que este agregando
+            {
+                var ciudadanoExiste = listaCiudadanos.Count(x => x.Nombre.ToString().ToLower().Trim() == txtBoxNombre.Text.ToLower().Trim());
+                if (ciudadanoExiste > 0)
+                {
+                    MessageBox.Show("Ya este concepto Existe", "LO SENTIMOS", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
+                    return;
+                }
+                ciudadano = new Ciudadano
+                {
+                    //Id = int.Parse(txtboxID.Text), // se crean atributos para cuando queramos anadir concepto
+                    Nombre = txtBoxNombre.Text,
+                    Nacionalidad = txtBoxNacionalidad.Text,
+                    EstadoCivil = txtBoxEstadoCivil.Text,
+                    FechaExpiracion = dtpExpiracion     
+                    Visibilidad = chkIsEnabled.Checked,
+                    FechaCreacion = DateTime.Now
+                };
 
-            listaCiudadanos.Add(persona); // cada ciudadano que se vaya creando se agregara a la lista
 
-            GetCiudadanos(); //llamamos al metodo para que cada vez que se cree el ciudadano, la dgv se actualice 
-            MessageBox.Show("Ciudadano agregado", "EXITO" , MessageBoxButtons.OK, MessageBoxIcon.None);
-            limpiarCampos();
+                listaCiudadanos.Add(ciudadano); // cada ciudadano que se vaya creando se agregara a la lista
+                GetCiudadanos(); //llamamos al metodo para que cada vez que se cree el ciudadano, la dgv se actualice 
+                MessageBox.Show("Ciudadano agregado", "EXITO", MessageBoxButtons.OK, MessageBoxIcon.None);
+                limpiarCampos();
+            }
 
         }
         private void GetCiudadanos()
         {
-            dgvCiudadanos.DataSource = null;
-            dgvCiudadanos.DataSource = listaCiudadanos; //el datagridview obtiene la lista de ciudadanos
+            var pathFile = $"{AppDomain.CurrentDomain.BaseDirectory}\\ciudadano.json";
+            var listaCiudadanos = new List<Ciudadano>();
+
+            if (File.Exists(pathFile))
+            {
+                var json = File.ReadAllText(pathFile, Encoding.UTF8);
+                listaCiudadanos = JsonConvert.DeserializeObject<List<Ciudadano>>(json);
+            }
+            return listaCiudadanos;
+            //txtboxID.Text = (listaCiudadanos.Count + 1).ToString();
+            //dgvConceptos.DataSource = listaConcepto; // mi dgv sera igual a mi listado de conceptos
+            //dgvCiudadanos.DataSource = null;
+            //dgvCiudadanos.DataSource = listaCiudadanos; //el datagridview obtiene la lista de ciudadanos
         }
 
         private void bttnCrear_Click(object sender, EventArgs e)
@@ -127,8 +155,7 @@ namespace PROYECTOS_CEDULA
         }
         private void bttnEliminar_Click_1(object sender, EventArgs e)
         {
-            DataGridViewRow fila = this.dgvCiudadanos.SelectedRows[0];
-            listaCiudadanos.RemoveAt(fila.Index);
+
         }
 
     }

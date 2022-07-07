@@ -22,17 +22,27 @@ namespace ControlDeGastos
             obtenerRegistros();
             actualizarConceptos();
         }
-
-        private void GenerateNewID()
+        public int id()
         {
-            VaciarCampos();
-            //var Id = 1; // se indica que es un id numerico con valor inicial de 1
-            //txtboxID.Text = Id.ToString(); // se obtiene lo escrito en dicho textbox
-        }
+            var pathFile = $"{AppDomain.CurrentDomain.BaseDirectory}\\concepts.json";
+            var listaConcepto = new List<Conceptos>();
+            var ID = 1;
 
+            if (File.Exists(pathFile))
+            {
+                var json = File.ReadAllText(pathFile);
+                listaConcepto = JsonConvert.DeserializeObject<List<Conceptos>>(json);
+            }
+
+            if(listaConcepto.Count > 0)
+            {
+                ID = listaConcepto.Max(x => x.Id + 1);
+            }
+            return ID;
+        }
         private void VaciarCampos() // se crea funcion para elimiar todos los campos del formulario
         {
-            txtboxID.Text = string.Empty; // se obtiene lo escrito en dicho textbox
+            txtboxID.Text = id().ToString(); // se obtiene lo escrito en dicho textbox
             txtboxNombre.Text = string.Empty;
             chkIsEnabled.Checked = false;
         }
@@ -75,15 +85,13 @@ namespace ControlDeGastos
                     concepto.Nombre = txtboxNombre.Text;
                     concepto.ModifiedDate = DateTime.Now;
                     concepto.Visibilidad = chkIsEnabled.Checked;
+                    concepto.Id = Id;
                 }
             }
-
             listaConcepto.Add(concepto); // se anade nuevo concepto a la lista
-
             json = JsonConvert.SerializeObject(listaConcepto); //serializar: llevar los datos de nuestro objeto tipo clase (conceptos) Al formato json
-
-            var sw = new StreamWriter(pathFile, false, Encoding.UTF8);
-            sw.Write(json);
+            var sw = new StreamWriter(pathFile, false, Encoding.UTF8); //streamwriter: objeto que permite alterar un archivo determinado
+            sw.Write(json); 
             sw.Close();
 
             MessageBox.Show("Registro Almacenado", "EXITO", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
@@ -109,13 +117,15 @@ namespace ControlDeGastos
                 listaConcepto = JsonConvert.DeserializeObject<List<Conceptos>>(json);
             }
 
-            txtboxID.Text = (listaConcepto.Count + 1).ToString();
+            //txtboxID.Text = (listaConcepto.Count + 1).ToString();
             //dgvConceptos.DataSource = listaConcepto; // mi dgv sera igual a mi listado de conceptos
             return listaConcepto;
         }
 
         private void bttNuevo_Click_1(object sender, EventArgs e)
         {
+            txtboxID.Text = id().ToString();
+            Adding = true; //indica que quiero agregar uno nuevo
             gbAgregarConceptos.Enabled = true;
             bttnCancelar.Enabled = true;
             bttnGuardar.Enabled = true;
@@ -131,10 +141,23 @@ namespace ControlDeGastos
 
         private void bttnGuardar_Click_1(object sender, EventArgs e)
         {
-            saveRecord();
+            if (ValidarCamposRellenos()) //Antes de crear al ciudadano se hace una validacion de que todos los campos se hayan completado
+            {
+                saveRecord(); //llamando a este metodo al presionar el boton de crear, los datos ingresados se guardan, solo si se cumple la condicion de que todos campos estan rellenos
+            }
             obtenerRegistros();
+            //else MessageBox.Show("Se produjo un error al registrar el usuario", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
         }
-
+        bool ValidarCamposRellenos() //Valida que los campos del contenedor esten todos llenos
+        {
+            foreach (Control c in gbAgregarConceptos.Controls) //Recorremos cada elemento del contenedor que posee los campos
+                if (String.IsNullOrWhiteSpace(c.Text)) //Si esta vacio
+                {
+                    MessageBox.Show("Complete todos los campos", "ATENCIÓN", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return false; //retorna que hay campos no rellenos
+                }
+            return true; //retorna que los campos estan rellenos
+        }
         private void bttnClose_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -146,38 +169,47 @@ namespace ControlDeGastos
 
         private void bttnEliminar_Click(object sender, EventArgs e)
         {
+
             var pathFile = $"{AppDomain.CurrentDomain.BaseDirectory}\\concepts.json";
             var json = File.ReadAllText(pathFile, Encoding.UTF8);
             var listaConcepto = JsonConvert.DeserializeObject<List<Conceptos>>(json);
-            DataGridViewRow fila = this.dgvConceptos.SelectedRows[0];
-            listaConcepto.RemoveAt(fila.Index);
+            //DataGridViewRow fila = this.dgvConceptos.SelectedRows[0];
+            var Concepto = listaConcepto.FirstOrDefault(x => x.Id.ToString() == txtboxID.Text);
+            listaConcepto.Remove(Concepto);
             json = JsonConvert.SerializeObject(listaConcepto);
 
             var sw = new StreamWriter(pathFile, false, Encoding.UTF8);
             sw.Write(json);
             sw.Close();
 
-            actualizarConceptos();
             VaciarCampos();
+            actualizarConceptos();
             bttnEliminar.Enabled = false;
         }
 
         private void dgvConceptos_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            var RowIndex = e.RowIndex;
-            if(RowIndex > -1)
+            gbAgregarConceptos.Enabled = true;
+            bttnGuardar.Enabled = true;
+            var RowIndex = e.RowIndex; //RowIndex: variable para asignar variable (e) a la fila en la que se hizo el double click
+            if(dgvConceptos.RowCount > 0)
             {
-                List<Conceptos> listaConcepto = obtenerRegistros();
-                bttnEliminar.Enabled = true;
-                rellenarCampos(listaConcepto[RowIndex]);
+                if (RowIndex > -1) // se procura que no sea la fila de los headers
+                {
+                    List<Conceptos> listaConcepto = obtenerRegistros();
+                    bttnEliminar.Enabled = true;
+                    rellenarCampos(listaConcepto[RowIndex]);
+                }
             }
         }
         private void rellenarCampos(Conceptos concepto)
         {
-            txtboxNombre.Text = concepto.Nombre;
+            txtboxNombre.Text = concepto.Nombre; //al campo se le agrega la propiedad
             txtboxID.Text = Convert.ToString(concepto.Id);
             chkIsEnabled.Checked = concepto.Visibilidad;
             Adding = false;
         }
+
     }
 }
+

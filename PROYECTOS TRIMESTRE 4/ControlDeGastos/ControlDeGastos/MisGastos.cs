@@ -22,12 +22,24 @@ namespace ControlDeGastos
             obtenerGastos();
             actualizarGastos();
         }
-        private void GenerateNewID()
+        public int id()
         {
-            VaciarCampos();
-            //var Id = 1; // se indica que es un id numerico con valor inicial de 1
-            //txtboxID.Text = Id.ToString(); // se obtiene lo escrito en dicho textbox
+            var pathFile1 = $"{AppDomain.CurrentDomain.BaseDirectory}\\gastos.json";
+            var listaGastos = new List<Gastos>();
+            var ID = 1;
+
+            if (File.Exists(pathFile1))
+            {
+                var json1 = File.ReadAllText(pathFile1);
+                listaGastos = JsonConvert.DeserializeObject<List<Gastos>>(json1);
+            }
+            if (listaGastos.Count > 0)
+            {
+                ID = listaGastos.Max(x => x.ID + 1);
+            }
+            return ID;
         }
+
         private void VaciarCampos() // se crea funcion para elimiar todos los campos del formulario
         {
             txtboxID.Text = string.Empty; // se obtiene lo escrito en dicho textbox
@@ -83,6 +95,8 @@ namespace ControlDeGastos
                     gastos.Fecha = dtpFecha.Value;
                     gastos.Monto = int.Parse(txtMonto.Text);
                     gastos.ModifiedDate = DateTime.Now;
+                    gastos.ID = Id;
+
                 }
             }
 
@@ -118,7 +132,7 @@ namespace ControlDeGastos
                 listaGastos = JsonConvert.DeserializeObject<List<Gastos>>(json1);
             }
 
-            txtboxID.Text = (listaGastos.Count + 1).ToString();
+            //txtboxID.Text = (listaGastos.Count + 1).ToString();
             //dtgGastos.DataSource = listaGastos; // mi dgv sera igual a mi listado de gastos
             return listaGastos;
         }
@@ -133,13 +147,14 @@ namespace ControlDeGastos
 
         private void bttAgregar_Click(object sender, EventArgs e)
         {
+            txtboxID.Text = id().ToString();
             gbIngresosGastos.Enabled = true;
             bttnCancelar.Enabled = true;
             bttnGuardar.Enabled = true;
             bttAgregar.Enabled = true;
             bttnEliminar.Enabled = false;
-            //obtenerGastos();
-            //saveGastos();
+            Adding1 = true;
+
         }
 
         private void bttnClose_Click(object sender, EventArgs e)
@@ -231,6 +246,8 @@ namespace ControlDeGastos
             {
                 List<Gastos> listaPagos = obtenerGastos();
                 bttnEliminar.Enabled = true;
+                gbIngresosGastos.Enabled = true;
+                bttnGuardar.Enabled = true;
                 rellenarCampos(listaPagos[RowIndex]);
             }
         }
